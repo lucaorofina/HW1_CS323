@@ -35,30 +35,33 @@ public class SortingAlgorithms {
 
     System.out.println();
         
+
     // Sort the array using HeapSort
-    long startTime = System.currentTimeMillis();
+    long startTimeHeap = System.nanoTime();
     HeapSort.heapSort(randomArray);
-    long endTime = System.currentTimeMillis();
-    long durationHeapSort = endTime - startTime;
+    long endTimeHeap = System.nanoTime();
+    long durationHeapSort = endTimeHeap - startTimeHeap;
         
     System.out.println("Sorted array using HeapSort:");
     printArray(randomArray);
+    
+    System.out.println("Execution time for HeapSort: " + durationHeapSort + " ns");
     
     // Sort the array using QuickSort
     QuickSort.quickSort(randomArray);
     System.out.println("Sorted array using QuickSort:");
     printArray(randomArray);
 
-    System.out.println("Execution time for HeapSort: " + durationHeapSort + " ms");
-    
      // Sort the array using HeapSortMod
-    long startTime = System.currentTimeMillis();
-    HeapSortMod.heapSortMod(randomArray);
-    long endTime = System.currentTimeMillis();
-    long durationHeapSortMod = endTime - startTime;
-         
-    System.out.println("Sorted array using HeapSortMod:");
+    long startTimeHeapM = System.nanoTime();
+    HeapSortMod.heapSortMod(randomArray); 
+    long endTimeHeapM = System.nanoTime();
+    long durationHeapSortM= endTimeHeapM - startTimeHeapM;
+    
+    System.out.println("Modified Heap Sort Execution Time (Nanoseconds): " + durationHeapSortM + " ns");
+    
     printArray(randomArray);
+
      /* 
  // Sort the array using QuickSortMod
      long startTime = System.currentTimeMillis();
