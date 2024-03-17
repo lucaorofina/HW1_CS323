@@ -1,6 +1,10 @@
 package sorting;
 
 public class QuickSort {
+
+    private static int compareNum = 0;
+    private static int swapNum = 0;
+
     public static void quickSort(int[] arr){
         quickSort(arr, 0, arr.length - 1);
     }
@@ -18,7 +22,8 @@ public class QuickSort {
         int pivot = arr[high];
         int i = low - 1;
         
-        for (int j = low; j < high; j++) {
+        for (int j = low; j < high; j++) { compareNum++;
+
             if (arr[j] <= pivot) {
                 i++;
                 
@@ -31,7 +36,24 @@ public class QuickSort {
         int temp = arr[i + 1];
         arr[i + 1] = arr[high];
         arr[high] = temp;
+        swapNum++;
         
         return i + 1;
+        
     }
+
+    //comparison and swap counters
+    public static int getCompareNum() {
+        return compareNum;
+    }
+
+    public static int getSwapNum() {
+        return swapNum;
+    }
+
+    // Reset counters
+    public static void resetCount() {
+        compareNum = 0;
+        swapNum = 0;
+}
 }

@@ -2,6 +2,9 @@ package sorting;
 
 public class HeapSort {
 
+    private static int compareNum = 0;
+    private static int swapNum = 0;
+
     public static void heapSort(int[] array) {
         int n = array.length;
 
@@ -28,26 +31,43 @@ public class HeapSort {
         int left = 2 * i + 1;
         int right = 2 * i + 2;
 
+        compareNum++;
         // If the left child is larger than the root
         if (left < n && array[left] > array[largest]) {
             largest = left;
         }
 
+        compareNum++;
         // If the right child is larger than the largest so far
         if (right < n && array[right] > array[largest]) {
             largest = right;
         }
 
+        compareNum++;
         // If the largest is not the root
         if (largest != i) {
             // Swap the root with the largest element
             int temp = array[i];
             array[i] = array[largest];
             array[largest] = temp;
+            swapNum++;
 
             // Recursively heapify the affected subtree
             heapify(array, n, largest);
         }
     }
- 
+ //comparison and swap counters
+ public static int getCompareNum() {
+    return compareNum;
+}
+
+public static int getSwapNum() {
+    return swapNum;
+}
+
+// Reset counters
+public static void resetCount() {
+    compareNum = 0;
+    swapNum = 0;
+}
 }

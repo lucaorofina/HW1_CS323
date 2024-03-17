@@ -48,8 +48,12 @@ public class SortingAlgorithms {
     System.out.println("Execution time for HeapSort: " + durationHeapSort + " ns");
     
     // Sort the array using QuickSort
+    long startTimeQuick = System.nanoTime();
     QuickSort.quickSort(randomArray);
-    System.out.println("Sorted array using QuickSort:");
+    long endTimeQuick = System.nanoTime();
+    long durationQuickSort = endTimeQuick - startTimeQuick;
+
+    System.out.println("Quick Sort execution time (nanosecond): " +durationQuickSort + "ns");
     printArray(randomArray);
 
      // Sort the array using HeapSortMod
