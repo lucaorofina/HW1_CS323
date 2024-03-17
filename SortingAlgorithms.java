@@ -66,16 +66,17 @@ public class SortingAlgorithms {
     
     printArray(randomArray);
 
-     /* 
- // Sort the array using QuickSortMod
-     long startTime = System.currentTimeMillis();
-     QuickSortMod.quickSortMod(randomArray);
-     long endTime = System.currentTimeMillis();
-     long durationQuickSortMod = endTime - startTime;
-            
-     System.out.println("Sorted array using QuickSortMod:");
-     printArray(randomArray);
-*/
+     
+ //// Sort the array using QuickSort with a partition in a random index of the array
+ 
+    long startTimeQuickM = System.nanoTime();
+    QuickSortMod.quickSortMod(randomArray);
+    long endTimeQuickM = System.nanoTime();
+    long durationQuickSortM = endTimeQuickM - startTimeQuickM;
+
+    System.out.println("Modified Quick Sort execution time (nanosecond): " +durationQuickSortM + "ns");
+    printArray(randomArray);
+
 
     scanner.close();
 }
